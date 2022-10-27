@@ -5,7 +5,6 @@ export const StyledMainSection = styled.main`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: red;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -13,7 +12,6 @@ export const StyledMainSection = styled.main`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 4rem;
 
   &::after {
     content: '';
