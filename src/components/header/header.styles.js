@@ -6,6 +6,7 @@ import colors from "styles/colors";
 export const StyledHeader = styled.header`
   position: absolute;
   width: 100%;
+  height: 13%;
   background: ${colors.blurred.purple};
   display: flex;
   justify-content: flex-start;
@@ -22,10 +23,10 @@ export const StyledHeader = styled.header`
 
 export const StyledLogo = styled.img`
   position: absolute;
-  left: calc((100% - 3.5rem) / 2);
-  top: calc((100% - 3.5rem) / 2);
-  width: 3.5rem;
-  height: 3.5rem;
+  left: calc((100% - 11vh) / 2);
+  top: calc((100% - 11vh) / 2);
+  width: 11vh;
+  height: 11vh;
   
   ${mq.desktop`
     position: relative;
@@ -40,6 +41,28 @@ export const StyledMenuButton = styled.button`
   height: 2.5rem;
   background: transparent;
   border: none;
+  cursor: pointer;
+
+  ${mq.desktop`
+    display: none;
+  `}
+`;
+
+export const StyledDrawer = styled.ul`
+  position: fixed;
+  top: 13vh;
+  left: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  font-family: ${fonts.cantataOne};
+  list-style-type: none;
+  margin: 0;
+  padding: 1.5rem;
+  z-index: 100;
+  background: ${colors.darkPurple};
+  transform: translate(-100%);
+  transition: ease-in 0.5s;
 
   ${mq.desktop`
     display: none;
@@ -48,6 +71,7 @@ export const StyledMenuButton = styled.button`
 
 export const StyledNavbar = styled.ul`
   display: none;
+  height: 100%;
   font-family: ${fonts.cantataOne};
   list-style-type: none;
   margin: 0;
@@ -56,11 +80,13 @@ export const StyledNavbar = styled.ul`
 
   ${mq.desktop`
     display: flex;
+    align-items: center;
   `}
 `;
 
 export const StyledListItem = styled.li`
-  margin-left: 2rem;
+  margin-left: 0;
+  margin-bottom: 2rem;
   padding: 0.7rem;
   background: ${colors.black};
   font-weight: bold;
@@ -71,12 +97,20 @@ export const StyledListItem = styled.li`
   text-transform: capitalize;
   cursor: pointer;
   box-shadow: 0px 0px 5px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     transform: scale(1.2) rotate(5deg);
     color: ${colors.purple};
     background: ${colors.white};
-
   }
+
+  ${mq.desktop`
+    margin-left: 2rem;
+    margin-bottom: 0;
+    height: 70%;
+  `}
 `;
 
