@@ -1,19 +1,18 @@
-import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
-import { navbarItems } from "styles/constants";
+import { navbarItems } from "utils/constants";
 import {
-  StyledHeader,
-  StyledLogo,
-  StyledMenuButton,
-  StyledNavbar,
-  StyledListItem,
-  StyledDrawer,
+  HeaderWrapper,
+  Logo,
+  MenuButton,
+  Navbar,
+  ListItem,
+  Drawer,
 } from "components/header/header.styles";
 
 function Header() {
   const handleMenuButtonClick = () => {
     const menuButton = document.getElementById("menu-button");
-    if (menuButton.style.transform == "none") {
+    if (menuButton.style.transform === "none") {
       menuButton.style.transform = "translate(-100%)";
     } else {
       menuButton.style.transform = "none";
@@ -22,25 +21,25 @@ function Header() {
 
   const getNavbarComponents = (element) => {
     return navbarItems.map((item, index) => (
-      <StyledListItem key={`${element} item number: ${index}`}>
+      <ListItem key={`${element} item number: ${index}`}>
         {item}
-      </StyledListItem>
+      </ListItem>
     ));
   };
 
   return (
-    <StyledHeader>
-      <StyledMenuButton onClick={handleMenuButtonClick}>
+    <HeaderWrapper>
+      <MenuButton onClick={handleMenuButtonClick}>
         <MdOutlineMenu size="100%" color="white" />
-      </StyledMenuButton>
+      </MenuButton>
 
-      <StyledLogo src="icons/logo.png" />
+      <Logo src="icons/logo.png" />
 
-      <StyledNavbar>{getNavbarComponents("navbar")}</StyledNavbar>
-      <StyledDrawer id="menu-button">
+      <Navbar>{getNavbarComponents("navbar")}</Navbar>
+      <Drawer id="menu-button">
         {getNavbarComponents("drawer")}
-      </StyledDrawer>
-    </StyledHeader>
+      </Drawer>
+    </HeaderWrapper>
   );
 }
 

@@ -3,7 +3,7 @@ import { mq } from "styles/media-query";
 import fonts from "styles/fonts";
 import colors from "styles/colors";
 
-export const StyledHeader = styled.header`
+export const HeaderWrapper = styled.header`
   position: absolute;
   width: 100%;
   height: 5.5rem;
@@ -22,7 +22,7 @@ export const StyledHeader = styled.header`
   `}
 `;
 
-export const StyledLogo = styled.img`
+export const Logo = styled.img`
   position: absolute;
   left: calc((100% - 4rem) / 2);
   top: calc((100% - 4rem) / 2);
@@ -37,7 +37,7 @@ export const StyledLogo = styled.img`
   `}
 `;
 
-export const StyledMenuButton = styled.button`
+export const MenuButton = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   background: transparent;
@@ -49,7 +49,7 @@ export const StyledMenuButton = styled.button`
   `}
 `;
 
-export const StyledDrawer = styled.ul`
+export const Drawer = styled.ul`
   position: fixed;
   top: 5.5rem;
   left: 0;
@@ -70,7 +70,7 @@ export const StyledDrawer = styled.ul`
   `}
 `;
 
-export const StyledNavbar = styled.ul`
+export const Navbar = styled.ul`
   display: none;
   height: 100%;
   font-family: ${fonts.cantataOne};
@@ -85,7 +85,7 @@ export const StyledNavbar = styled.ul`
   `}
 `;
 
-export const StyledListItem = styled.li`
+export const ListItem = styled.li`
   margin-left: 0;
   margin-bottom: 2rem;
   padding: 0.7rem;
