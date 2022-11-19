@@ -1,13 +1,13 @@
 import { StyledApp } from "page/app/app.styled";
 import Header from "components/header";
-import MainSection from "components/mainSection";
+import MainSectionWrapper from "components/mainSection";
 import Footer from "components/footer";
 
 function App() {
   return (
     <StyledApp>
       <Header />
-      <MainSection />
+      <MainSectionWrapper />
       <Footer />
     </StyledApp>
   );
