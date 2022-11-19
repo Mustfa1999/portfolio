@@ -56,7 +56,7 @@ export const Drawer = styled.ul`
   display: flex;
   height: 100vh;
   flex-direction: column;
-  font-family: ${fonts.cantataOne};
+  font-family: ${fonts.consolas};
   list-style-type: none;
   margin: 0;
   padding: 1.5rem;
@@ -73,7 +73,7 @@ export const Drawer = styled.ul`
 export const Navbar = styled.ul`
   display: none;
   height: 100%;
-  font-family: ${fonts.cantataOne};
+  font-family: ${fonts.consolas};
   list-style-type: none;
   margin: 0;
   margin-right: 2rem;
@@ -91,7 +91,7 @@ export const ListItem = styled.li`
   padding: 0.7rem;
   background: ${colors.black};
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
   transition: ease-in 0.15s;
   color: ${colors.white};
