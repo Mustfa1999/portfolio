@@ -1,10 +1,10 @@
-import 'components/footer/footer.styles'
+import { FooterWrapper } from "components/footer/footer.styles";
 
 function Footer() {
   return (
-    <div>
-      <>footer</>
-    </div>
+    <FooterWrapper>
+      footer
+    </FooterWrapper>
   );
 }
 

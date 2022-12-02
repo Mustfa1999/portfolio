@@ -11,15 +11,15 @@ const orbital = keyframes`
   }
 `;
 
-const hidden = (start, end) => keyframes`
+const hidden =  keyframes`
   0% {
-    z-index: ${start};
+    z-index: 5;
   }
   50% {
-    z-index: ${end};
+    z-index: 15;
   }
   100% {
-    z-index: ${start};
+    z-index: 5;
   }
 `;
 
@@ -29,6 +29,7 @@ export const IonicAvatarWrapper = styled.section`
   position: relative;
   width: 100%;
   z-index: 30;
+  margin-bottom: 25rem;
 `;
 
 export const IonicContainer = styled.div`
@@ -54,7 +55,7 @@ export const AnimatedTitle = styled.div`
   width: 100%;
   z-index: 30;
   margin-top: 3rem;
-  margin-left: 1rem;
+  padding-left: 1rem;
   font-weight: bold;
   font-size: 2rem;
   transition: 0.3s ease-in;
@@ -78,13 +79,12 @@ export const EllipsePath = styled.div`
   width: 24rem;
   height: 24rem;
   border-radius: 50%;
-  /* border: 0.1rem solid white; */
   position: absolute;
   top: 2rem;
   transform-style: preserve-3d;
   transform: rotateZ(${(props) => props.rotateZ}deg)
     rotateY(${(props) => props.rotateY}deg);
-  animation: ${(props) => hidden(props.start, props.end)} 4s ease-in
+  animation: ${hidden} 4s ease-in
     ${(props) => props.delay}s infinite;
 `;
 
