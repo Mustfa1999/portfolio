@@ -8,8 +8,16 @@ import {
   ListItem,
   Drawer,
 } from "components/header/header.styles";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-function Header() {
+function Header({ headerTransform }) {
+  const [activeNavItem, setActiveNavItem] = useState(
+    navbarItems.map((item) => {
+      return { id: item.id, state: item.title === "home" ? true : false };
+    })
+  );
+
   const handleMenuButtonClick = () => {
     const menuButton = document.getElementById("menu-button");
     if (menuButton.style.transform === "none") {
@@ -19,16 +27,41 @@ function Header() {
     }
   };
 
+  const handleMenuItemClisk = (item) => {
+    setActiveNavItem(
+      activeNavItem.map((subItem) => {
+        return {
+          id: subItem.id,
+          state: subItem.id === item.id ? true : false,
+        };
+      })
+    );
+  };
+
   const getNavbarComponents = (element) => {
-    return navbarItems.map((item, index) => (
-      <ListItem key={`${element} item number: ${index}`}>
-        {item}
-      </ListItem>
-    ));
+    return navbarItems.map((item) => {
+      return (
+        <NavLink
+          to={item.link}
+          style={{ textDecoration: "none" }}
+          key={`${element} link number: ${item.id}`}
+        >
+          <ListItem
+            key={`${element} item number: ${item.id}`}
+            isActive={activeNavItem[item.id].state}
+            onClick={() => {
+              handleMenuItemClisk(item);
+            }}
+          >
+            {item.title}
+          </ListItem>
+        </NavLink>
+      );
+    });
   };
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper transform={headerTransform}>
       <MenuButton onClick={handleMenuButtonClick}>
         <MdOutlineMenu size="100%" color="white" />
       </MenuButton>
@@ -36,9 +69,7 @@ function Header() {
       <Logo src="icons/logo.png" />
 
       <Navbar>{getNavbarComponents("navbar")}</Navbar>
-      <Drawer id="menu-button">
-        {getNavbarComponents("drawer")}
-      </Drawer>
+      <Drawer id="menu-button">{getNavbarComponents("drawer")}</Drawer>
     </HeaderWrapper>
   );
 }

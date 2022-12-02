@@ -16,7 +16,9 @@ export const HeaderWrapper = styled.header`
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   border-bottom: 0.1rem solid ${colors.pink};
-
+  transition: 0.2s ease-in;
+  transform: ${(props) => props.transform};
+  
   ${mq.desktop`
     justify-content: space-between;
   `}
@@ -89,12 +91,12 @@ export const ListItem = styled.li`
   margin-left: 0;
   margin-bottom: 2rem;
   padding: 0.7rem;
-  background: ${colors.black};
+  background: ${props =>  props.isActive ? colors.white : colors.black };
+  color: ${ props =>  props.isActive ? colors.purple : colors.white };
   font-weight: bold;
   font-size: 1.2rem;
   border-radius: 0.5rem;
   transition: ease-in 0.15s;
-  color: ${colors.white};
   text-transform: capitalize;
   cursor: pointer;
   box-shadow: 0px 0px 5px white;

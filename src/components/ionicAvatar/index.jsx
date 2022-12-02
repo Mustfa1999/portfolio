@@ -5,7 +5,7 @@ import {
   EllipsePath,
   IonicContainer,
   AnimatedTitle,
-} from "components/mainSection/ionicAvatar/ionic-avatar.styles";
+} from "components/ionicAvatar/ionic-avatar.styles";
 import { avatarIons } from "utils/constants";
 import Typewriter from "typewriter-effect";
 
@@ -62,8 +62,6 @@ function IonicAvatar() {
               key={ion.id}
               rotateZ={ion.rotateZ}
               rotateY={ion.rotateY}
-              start={ion.start}
-              end={ion.end}
               delay={ion.delay}
             >
               <ReactIcon
